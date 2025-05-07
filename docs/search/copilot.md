@@ -325,13 +325,24 @@ For customers on [Flex pricing](/docs/manage/partitions/flex), all data is store
 
 ### Tiered pricing (legacy)
 
-If you're on [classic tiered pricing](/docs/manage/partitions/data-tiers/searching-data-tiers/), Copilot by default searches across continuous data tiers only, unless otherwise specified.
+If you're on [classic tiered pricing](/docs/manage/partitions/data-tiers/searching-data-tiers/), Copilot by default searches only the continuous tiers unless you explicitly include a different data tier.
 
-To direct Copilot to search the Infrequent tier, for example, use:
+To search the Infrequent tier, you must add a `_dataTier=Infrequent` filter in the Copilot [source](#step-2-review-and-adjust-the-auto-selected-source) field. For example:
+
+```sql
+_sourceCategory=marketrisk/prod and _dataTier=Infrequent
+```
+
+Or simply:
 
 ```sql
 _dataTier=Infrequent
 ```
+
+For example:<br/><img src={useBaseUrl('img/search/copilot/source-tier.png')} alt="Copilot source field showing _dataTier=Infrequent" style={{border: '1px solid gray'}} width="600" />
+
+For more details, see [Searching Data Tiers](/docs/manage/partitions/data-tiers/searching-data-tiers/).
+
 
 ## FAQ
 
