@@ -1,7 +1,7 @@
 resource "sumologic_cloud_to_cloud_source" "google-workspace-source" {
   collector_id = sumologic_collector.collector.id
   schema_ref = {
-    type = "Google Workspace User Inventory"
+    type = "Google Workspace"
   }
   config = jsonencode({
     "type": "service_account",
